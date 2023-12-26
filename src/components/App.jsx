@@ -16,7 +16,7 @@ const App = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [totalPages, setTotalPages] = useState(0);
-  const [error, setError] = useState(null);
+
 
   useEffect(() => {
    
@@ -44,7 +44,7 @@ const App = () => {
       setTotalPages(Math.ceil(data.totalHits / perPage));
     } catch (error) {
       console.error('Error fetching data:', error);
-      setError(error);
+    
     } finally {
       setLoading(false);
     }
